@@ -17,7 +17,7 @@ public class Email {
     private String email;
     private String password;
     private int mailCapacity = 500;
-    private String alter_email;
+    private String alternativeEmail;
 
 
     public Email(String firstname, String lastname) {
@@ -27,19 +27,19 @@ public class Email {
         System.out.println("New Employee: " + this.firstname+"" + this.lastname);
 
         this.dept = this.setDept();
-        this.password = this.generate_password(8);
-        this.email = this.generate_email();
+        this.password = this.generatePassword(8);
+        this.email = this.generateEmail();
 
 
     }
 
-    private String generate_email(){
+    private String generateEmail(){
         return firstname.toLowerCase() + "." + lastname.toLowerCase()+"@"+dept.toLowerCase()+".company.com";
     }
 
     private String setDept(){
         System.out.println("Department codes \n for Sales \n2 for Development \n3 for Accounting \n0 for none");
-        boolean flag = false;
+        boolean flag = true;
         do {
             System.out.println("Enter department code: ");
             int choice = sc.nextInt();
@@ -60,7 +60,7 @@ public class Email {
     }
 
     //GENERATE RANDOM PASSWORD//
-    private String generate_password(int length){
+    private String generatePassword(int length){
         Random r = new Random();
         String Capital_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String small_chars = "abcdefghijklmnopqrsutvwxyz";
@@ -76,7 +76,7 @@ public class Email {
     }
 
     //CHANGE PASSWORD//
-    public void set_password(){
+    public void setPassword(){
         boolean flag = false;
         do {
             System.out.println("Do you want to change your password?(Y/N)");
@@ -102,14 +102,14 @@ public class Email {
         }while (!flag);
     }
 
-    public void sel_emailCap(){
+    public void setEmailCap(){
         System.out.println("Current capacity = " + mailCapacity + "mb");
         System.out.println("Enter new mailbox capacity: ");
         mailCapacity = sc.nextInt();
         System.out.println("Mailbox capacity is successfully changed!");
     }
 
-    public void alternative_email(){
+    public void alternativeEmail(){
         System.out.println("Enter new alternative email: ");
         alter_email = sc.next();
         System.out.println("Alternative email is set: " );
@@ -142,7 +142,7 @@ public class Email {
         }
     }
 
-    public void read_file(){
+    public void readFile(){
         try{
             FileReader f1 = new FileReader("C:\\Users\\sulaj\\OneDrive\\Desktop\\EmailApplication");
             int i;
