@@ -20,19 +20,19 @@ public class EmailApp {
                     email.getInfo();
                     break;
                 case 2:
-                    email.set_password();
+                    email.setPassword();
                     break;
                 case 3:
-                    email.sel_emailCap();
+                    email.setEmailCap();
                     break;
                 case 4:
-                    email.alternative_email();
+                    email.alternativeEmail();
                     break;
                 case 5:
                     email.storefile();
                     break;
                 case 6:
-                    email.read_file();
+                    email.readFile();
                     break;
                 case 7:
                     System.out.println("Thank you for using our application...");
