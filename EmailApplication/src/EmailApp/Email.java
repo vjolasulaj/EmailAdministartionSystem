@@ -34,7 +34,7 @@ public class Email {
     }
 
     private String generateEmail(){
-        return firstname.toLowerCase() + "." + lastname.toLowerCase()+"@"+dept.toLowerCase()+".company.com";
+        return firstname.toLowerCase() + "." + lastname.toLowerCase()+ "@" +dept.toLowerCase() + ".company.com";
     }
 
     private String setDept(){
@@ -53,7 +53,7 @@ public class Email {
                 case 0:
                     return "None";
                 default:
-                    System.out.println("Invalid choice please choose it again");
+                    System.out.println("Invalid choice please choose it again...");
             }
         }while(!flag);
         return null;
@@ -67,8 +67,8 @@ public class Email {
         String number = "0123456789";
         String symbols = "!@#$%^&*?";
         String values = Capital_chars+small_chars+number+symbols;
-        String password="";
-        for (int i=0; i<length;i++){
+        String password = "";
+        for (int i = 0; i<length; i++){
             password=password+values.charAt(r.nextInt(values.length()));
         }
         return password;
@@ -82,7 +82,7 @@ public class Email {
             System.out.println("Do you want to change your password?(Y/N)");
             char choice = sc.next().charAt(0);
 
-            if (choice == 'Y' || choice == 'N') {
+            if (choice == 'Y' || choice == 'y') {
                 flag = true;
                 System.out.println("Enter current password: ");
                 String temp = sc.next();
@@ -112,7 +112,7 @@ public class Email {
     public void alternativeEmail(){
         System.out.println("Enter new alternative email: ");
         alter_email = sc.next();
-        System.out.println("Alternative email is set: " );
+        System.out.println("Alternative email is set: ");
     }
 
     public void getInfo(){
@@ -144,7 +144,7 @@ public class Email {
 
     public void readFile(){
         try{
-            FileReader f1 = new FileReader("C:\\Users\\sulaj\\OneDrive\\Desktop\\EmailApplication");
+            FileReader f1 = new FileReader("C:\\Users\\sulaj\\OneDrive\\Desktop\\file.txt");
             int i;
             while ((i= f1.read())!=-1) {
                 System.out.println((char)i);
